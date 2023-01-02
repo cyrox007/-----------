@@ -14,10 +14,13 @@
     <main>
         <section class="garland__setting">
             <form action="">
-                <select name="garland_setting" id="garland_setting">
-                    <option value="white">Белая тема</option>
-                    <option value="dark">Афротема</option>
-                </select>
+                <label for="garland_setting">
+                    выберете тему
+                    <select name="garland_setting" id="garland_setting">
+                        <option value="white">Белая тема</option>
+                        <option value="dark">Темная тема</option>
+                    </select>
+                </label>
             </form>
         </section>
         <section class="garland__view">
@@ -39,19 +42,29 @@
                     if (theme == null || theme == "white") {
                         page.className = "white-style";
                         mainpage.data.garland.classList = "garland garland_white";
+                        document.querySelector('label').style.color = "#000";
                     } else {
                         page.className = "dark-style";
                         mainpage.data.garland.classList = "garland garland_dark";
+                        document.querySelector('label').style.color = "#fff";
                     }
                 }
             }
         };
         (function () {
+            window.addEventListener('resize', () => {
+                if (window.innerWidth < 1200 && window.innerWidth > 768) {
+                    mainpage.data.garland.style.height = window.innerWidth / 10 + 'px';
+                } else if (window.innerWidth < 768 && window.innerWidth > 400) {
+                    mainpage.data.garland.style.height = "120px";
+                } else if (window.innerWidth < 400) {
+                    mainpage.data.garland.style.height = (120 - (window.innerWidth / 10)) +"px";
+                }
+            });
             mainpage.data.pageSet.addEventListener('change', ()=>{
                 mainpage.helper.pageTheme(mainpage.data.pageSet.value);
             });
             mainpage.data.garland.addEventListener('click', ()=>{
-                
                 mainpage.data.garland.classList.toggle('garland_animate');
             });  
         }());
