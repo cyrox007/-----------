@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Girland</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        mainpage = {};
+    </script>
+</head>
+<body class="white-style">
+    <main>
+        <section class="garland__setting">
+            <form action="">
+                <select name="garland_setting" id="garland_setting">
+                    <option value="white">Белая тема</option>
+                    <option value="dark">Афротема</option>
+                </select>
+            </form>
+        </section>
+        <section class="garland__view">
+            <div class="garland garland_white" id="garland"></div>
+        </section>
+    </main>
+    <script>
+        mainpage = {
+            data: {
+                garland: document.getElementById('garland'),
+                pageSet: document.getElementById('garland_setting')
+            },
+            helper: {
+                pageTheme: (theme) => {
+                    let page = document.querySelector('body');
+                    if (!page.classList.contains('white-style') || !page.classList.contains('dark-style')) {
+                        page.classList.add('white-style');
+                    }
+                    if (theme == null || theme == "white") {
+                        page.className = "white-style";
+                        mainpage.data.garland.classList = "garland garland_white";
+                    } else {
+                        page.className = "dark-style";
+                        mainpage.data.garland.classList = "garland garland_dark";
+                    }
+                }
+            }
+        };
+        (function () {
+            mainpage.data.pageSet.addEventListener('change', ()=>{
+                mainpage.helper.pageTheme(mainpage.data.pageSet.value);
+            });
+            mainpage.data.garland.addEventListener('click', ()=>{
+                
+                mainpage.data.garland.classList.toggle('garland_animate');
+            });  
+        }());
+    </script>
+</body>
+</html>
