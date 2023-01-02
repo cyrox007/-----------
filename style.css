@@ -1,3 +1,8 @@
+:root {
+  --page-bg-dark: rgb(29, 29, 29);
+  --page-bg-light: #e0e0e0;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -5,11 +10,11 @@
 }
 
 .white-style {
-  background: #e0e0e0;
+  background: var(--page-bg-light);
 }
 
 .dark-style {
-  background: rgb(29, 29, 29);
+  background: var(--page-bg-dark);
 }
 
 main {
@@ -34,7 +39,6 @@ main section form {
   margin: 0 auto;
 }
 main section form label {
-  cursor: pointer;
   font-size: 16px;
   font-weight: 700;
   text-align: center;
@@ -78,6 +82,7 @@ main section form label select:focus {
   outline: none;
 }
 main section .garland {
+  cursor: pointer;
   height: 118px;
   width: 100%;
   max-width: 1200px;
