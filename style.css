@@ -90,19 +90,19 @@ main section .garland {
   }
 }
 main section .garland_dark {
-  background-image: url(/img/IToQCabrvA0ygG7VzyY75Hq7o.jpg);
+  background-image: url(img/IToQCabrvA0ygG7VzyY75Hq7o.jpg);
 }
 @media screen and (max-width: 768px) {
   main section .garland_dark {
-    background-image: url(/img/8Dy8hxx8T7RTIth8GWLZSAJFg.jpg);
+    background-image: url(img/8Dy8hxx8T7RTIth8GWLZSAJFg.jpg);
   }
 }
 main section .garland_white {
-  background-image: url(/img/l4Tgv-zPh16ik4G3yCzAVfprk.jpg);
+  background-image: url(img/l4Tgv-zPh16ik4G3yCzAVfprk.jpg);
 }
 @media screen and (max-width: 768px) {
   main section .garland_white {
-    background-image: url(/img/7mMbVlD1Ru_T-942Ho5wzOjsQ.jpg);
+    background-image: url(img/7mMbVlD1Ru_T-942Ho5wzOjsQ.jpg);
   }
 }
 main section .garland_animate {
